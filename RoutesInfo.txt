@@ -1,0 +1,23 @@
+
+
+Product Service is running on Port : 5000
+Cart Service is running on Port : 5001
+Api Gateway  service is running on Port : 5002
+
+To run All three project at same time --> right click on solution("MicroServiceDemo") -> properties -> Multiple startup projects -> select all three to start --> apply
+
+Services and routes configuration is in ocelot.json file inside APIGateway Project
+
+GET METHODS:
+
+Get All Products :  http://localhost:5002/v1/product
+
+Get Product By id : http://localhost:5002/v1/product/1
+
+Get All Cart's products http://localhost:5002/v1/cart
+
+
+POST Methods:
+
+Add Product to Cart where Product's ID is 2 http://localhost:5002/v1/cart/2   (first get product by id
+from product service and add that product in to cart from cart service)
