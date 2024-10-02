@@ -13,6 +13,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<CartDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddSingleton<RabbitMQPublisher>();
+
 builder.Services.AddHttpClient("ProductService", client =>
 {
     client.BaseAddress = new Uri("http://localhost:5000/");
